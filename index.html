@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Объём параллелепипеда</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <!-- Вкладки -->
+  <div class="tabs">
+    <div class="tab active" onclick="openTab(0)">Построение параллелепипеда</div>
+    <div class="tab" onclick="openTab(1)">История построений</div>
+  </div>
+
+  <div class="container">
+    <!-- Вкладка 1 -->
+    <div class="content active">
+      <div class="form-box">
+        <h1>Построение и вычисление объёма параллелепипеда, построенного на 3-х некомпланарных векторах</h1>
+        <h1>Задайте:</h1>
+        <h2>Координаты начала векторов:</h2>
+
+        <div class="inputs">
+          <input type="number" placeholder="x" required>
+          <input type="number" placeholder="y" required>
+          <input type="number" placeholder="z" required>
+        </div>
+        <h2>Координаты конца 1-го вектора:</h2>
+        <div class="inputs">
+          <input type="number" placeholder="x" required>
+          <input type="number" placeholder="y" required>
+          <input type="number" placeholder="z" required>
+        </div>
+        <h2>Координаты конца 2-го вектора:</h2>
+        <div class="inputs">
+          <input type="number" placeholder="x" required>
+          <input type="number" placeholder="y" required>
+          <input type="number" placeholder="z" required>
+        </div>
+        <h2>Координаты конца 3-го вектора:</h2>
+        <div class="inputs">
+          <input type="number" placeholder="x" required>
+          <input type="number" placeholder="y" required>
+          <input type="number" placeholder="z" required>
+        </div>
+
+        <button class="btn" onclick="calculateVolume()">Рассчитать объём</button>
+        <div id="message"></div>
+      </div>
+
+      <div class="image-box">
+        <canvas id="canvas"></canvas>
+      </div>
+    </div>
+
+    <!-- Вкладка 2 -->
+    <div class="content">
+      <div class="history-box">
+        <h1>История построений</h1>
+        <div class="history-item" id="history">Нет сохранённых построений</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/tabs.js"></script>
+  <script src="js/history.js"></script>
+  <script src="js/main.js"></script>
+  <script src="https://cdn.babylonjs.com/babylon.js"></script>
+  <script src="js/geometry.js"></script>
+</body>
+</html>
